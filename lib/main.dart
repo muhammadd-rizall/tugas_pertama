@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tugas1/screen/Page_list_horizontal.dart';
+import 'package:tugas1/screen/page_column.dart';
+import 'package:tugas1/screen/page_dua.dart';
+import 'package:tugas1/screen/page_gambar.dart';
+import 'package:tugas1/screen/page_row.dart';
+import 'package:tugas1/screen/page_row_column.dart';
+import 'package:tugas1/screen/page_satu.dart';
+import 'package:tugas1/screen/page_tiga.dart';
+import 'package:tugas1/screen/page_url_image.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,9 +53,121 @@ class PageUtama extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('App MI 2A'), backgroundColor: Colors.purple, centerTitle: true,),
+      appBar: AppBar(
+        title: Text('App MI 2A'),
+        backgroundColor: Colors.purple,
+        centerTitle: true,
+      ),
 
-      body: Center(child: Text('Welcome to MI 2A Apps')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('Welcome to MI 2A Apps'),
+            MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PageSatu()),
+                );
+              },
+              color: Colors.orange,
+              child: Text(
+                'page1',
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PageColumn()),
+                  );
+                },
+                elevation: 18.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                color: Colors.orange,
+                child: Text(
+                  'page2',
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
+              ),
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PageRow()),
+                );
+              },
+              color: Colors.orange,
+              child: Text(
+                'page3',
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PageRowColumn()),
+                );
+              },
+              color: Colors.orange,
+              child: Text(
+                'page4',
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+             MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PageListHorizontal()),
+                );
+              },
+              color: Colors.orange,
+              child: Text(
+                'Page List',
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+
+             MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PageGambar()),
+                );
+              },
+              color: Colors.orange,
+              child: Text(
+                'page gambar',
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+              MaterialButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PageUrlImage()),
+                );
+              },
+              color: Colors.orange,
+              child: Text(
+                'Page Url Image',
+                style: TextStyle(fontSize: 14, color: Colors.white),
+              ),
+            ),
+
+          ],
+        ),
+      ),
     );
   }
 }
